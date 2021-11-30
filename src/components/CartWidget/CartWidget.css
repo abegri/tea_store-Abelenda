@@ -1,0 +1,15 @@
+.cart-container{
+    display:flex;
+    align-items: center;
+}
+
+.cart-icon{
+    font-size: 24px;
+    color: var(--contrastColor2);
+}
+
+.cart-container > p{
+    margin: unset;
+    margin-left: 10px;
+    font-size: 22px;
+}
