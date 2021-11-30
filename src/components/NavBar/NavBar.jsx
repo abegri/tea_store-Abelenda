@@ -3,18 +3,7 @@ import CartWidget from "../CartWidget/CartWidget";
 import './NavBar.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle} from 'reactstrap';
-let logo= "/img/logo2.png";
-
-/*
-<ul className="nav-links">
-                    <li><a href="#">Categorías</a></li>
-                        <ul>
-                            <li><a href="#">Té en hebras</a></li>
-                            <li><a href="#">Cajitas de té</a></li>
-                            <li><a href="#">Tazas</a></li>
-                        </ul>
-                    
-                </ul> */
+let logo= "/img/logo2-chico.png";
 
 const NavBar =()=>{
 

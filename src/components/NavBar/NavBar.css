@@ -38,17 +38,3 @@
     width: 150px;
     height: 150px;
 }
-
-/*.navBar .nav-links{
-    display: flex;
-    list-style-type: none;
-}
-
-.nav-links > li > a{
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 18px;
-    background-color: rgba(104, 219, 208, 0.65);
-    padding: 5px;
-    color: var(--contrastColor1);
-}*/
