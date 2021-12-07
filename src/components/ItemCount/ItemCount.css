@@ -29,6 +29,10 @@ section{
   
 }
 
+.buttons-containter > h1{
+    margin: unset !important;
+}
+
 .add-button,
 .sustract-button{
     font-size: 20px;
