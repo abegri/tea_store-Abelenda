@@ -1,5 +1,6 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
+import ItemList from "../ItemList/ItemList";
 import './ItemListContainer.css'
 
 const ItemListContainer =({greetings})=>{
@@ -9,19 +10,51 @@ const ItemListContainer =({greetings})=>{
             id: 1,
             name: "Té Chai",
             stock: 8,
-            price: 800,
-            img:"",
-            category:""
+            price: 500,
+            imgUrl:"https://http2.mlstatic.com/D_NQ_NP_609674-MLA25813316605_072017-O.jpg",
+            category:"Té en hebras"
             
         },  
         {
-            id: 1,
+            id: 2,
             name: "Té de Jazmín",
+            stock: 5,
+            price: 600,
+            imgUrl:"http://innatia.info/images/galeria/te-de-jazmin-0.jpg",
+            category:"Té en hebras"
+        }, 
+        {
+            id: 3,
+            name: "Infusor de té- Tetera",
             stock: 8,
             price: 800,
-            img:"",
-            category:""
-        }, 
+            imgUrl:"https://d2ye0ltusw47tz.cloudfront.net/549998-large_default/infusor-de-te-forma-tetera-acero-inoxidable-colador-hebras.jpg",
+            category:"Accesorios"
+        },
+        {
+            id: 4,
+            name: "Infusor de té- Corazón",
+            stock: 8,
+            price: 800,
+            imgUrl:"https://i.ebayimg.com/images/g/MbIAAOSwdg5dLgBR/s-l400.jpg",
+            category:"Accesorios"
+        },
+        {
+            id: 5,
+            name: "Taza Amapola",
+            stock: 8,
+            price: 800,
+            imgUrl:"https://images.pexels.com/photos/7138780/pexels-photo-7138780.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            category:"Taza"
+        },
+        {
+            id: 6,
+            name: "Taza Margaritas",
+            stock: 8,
+            price: 800,
+            imgUrl:"https://images.unsplash.com/photo-1560228083-e0fd2410ce25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            category:"Taza"
+        },
 
     ];
 
@@ -30,7 +63,7 @@ const ItemListContainer =({greetings})=>{
     let promise= new Promise((resolve, reject) =>  {
         setTimeout(() => {
             resolve(array);
-        }, 2000 ); 
+        }, 100 ); 
     } );
 
     const resolverArray = async() =>{
@@ -40,29 +73,17 @@ const ItemListContainer =({greetings})=>{
         } catch(error){
             throw error;
         } finally{
+            console.log(data);
             console.log("la petición se terminó")} 
     };
     
-    /*async function name(){
-        try{
-            const data = await promise;
-            setData(data);
-        } catch(error){
-            throw error;
-        } finally{
-            console.log("la petición se terminó")} 
-    };*/
-    
     useEffect(() =>  {resolverArray()}, [] )
     
-
-    const [counter, setCounter] = useState(0);
-
-
     return(
 
         <div className="listContainer">
                 <h1>{greetings}</h1>
+                <ItemList items={data}/>
         </div>
       
     )

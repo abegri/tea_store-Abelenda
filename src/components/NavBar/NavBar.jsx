@@ -27,9 +27,9 @@ const NavBar =()=>{
                         <DropdownMenu>
                             <DropdownItem>Té en Hebras</DropdownItem>
                                 <DropdownItem divider/>
-                            <DropdownItem>Cajitas de té</DropdownItem>
-                                <DropdownItem divider/>
                             <DropdownItem>Tazas</DropdownItem>
+                                <DropdownItem divider/>
+                            <DropdownItem>Accesorios</DropdownItem>
                         </DropdownMenu>
 
                     </Dropdown>
