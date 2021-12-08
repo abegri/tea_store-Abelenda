@@ -63,7 +63,7 @@ const ItemListContainer =({greetings})=>{
     let promise= new Promise((resolve, reject) =>  {
         setTimeout(() => {
             resolve(array);
-        }, 100 ); 
+        }, 2000 ); 
     } );
 
     const resolverArray = async() =>{
