@@ -1,0 +1,40 @@
+.section-details{
+    width: 100%;
+}
+
+.details-container{
+    width: 100%;
+    display: flex;
+    margin: 20px 0px;
+}
+
+.details-img-container{
+    width: 600px;
+    height: 500px;
+    margin-right: 50px;
+    border-radius: 10px ;
+}
+
+.details-image{
+    object-fit: cover;
+    object-position: center;
+    width: inherit;
+    height: inherit;
+    position:relative;
+    border-radius: 10px ;
+}
+
+.details-description-container{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    justify-content: space-around;
+}
+
+.addToCart-button{
+    background-color: var(--primaryColor);
+    width: 50%;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+}

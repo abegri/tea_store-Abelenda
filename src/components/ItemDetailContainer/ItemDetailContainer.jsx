@@ -1,9 +1,11 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import ItemList from "../ItemList/ItemList";
-import './ItemListContainer.css'
+import ItemDetail from "../ItemDetail/ItemDetail";
 
-const ItemListContainer =({greetings})=>{
+import "./ItemDetailContainer.css";
+
+
+const ItemDetailContainer =({greetings})=>{
     
     const array=[ 
         {
@@ -72,7 +74,7 @@ const ItemListContainer =({greetings})=>{
         }, 2000 ); 
     } );
 
-    const resolverArray = async() =>{
+    const getItem = async() =>{
         try{
             const data = await promise;
             setData(data);
@@ -83,17 +85,17 @@ const ItemListContainer =({greetings})=>{
             console.log("la petición se terminó")} 
     };
     
-    useEffect(() =>  {resolverArray()}, [] )
+    useEffect(() =>  {getItem()}, [] )
     
     return(
 
-        <div className="listContainer">
-                <h1>{greetings}</h1>
-                <ItemList items={data}/>
+        <div className="allItems-container">
+          
+                <ItemDetail itemDetails={data}/>
+                
         </div>
       
     )
 }
 
-export default ItemListContainer;
-
+export default ItemDetailContainer;
