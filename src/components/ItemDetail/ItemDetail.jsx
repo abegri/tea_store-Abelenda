@@ -7,7 +7,7 @@ const ItemDetail = ({itemDetails}) => {
         <section className="section-details">
             {itemDetails && itemDetails.map((itemDetail) => (
                 <>
-                <h3>Productos / {itemDetail.category} / {itemDetail.name}</h3>
+                <h6>Productos / {itemDetail.category} / {itemDetail.name}</h6>
                 <div className="details-container" key={itemDetail.id} item={itemDetail}>
                        
                         <div className="details-img-container">
