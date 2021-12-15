@@ -6,13 +6,12 @@ import Footer from "../components/Footer/Footer";
 
 export default function Category() {
 
-    let params= useParams();
-    console.log(params)
+    let { category }= useParams();
     
     return (
         <div>
             <NavBar/>
-            <ItemListContainer greetings="¡Bienvenidos a Tea-Time!"/>
+            <ItemListContainer greetings={ category }/>
             <Footer/>
         </div>
     )

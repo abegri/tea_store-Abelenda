@@ -20,19 +20,19 @@ const DropdownCategoryList =()=>{
                         <DropdownToggle caret>Categorías</DropdownToggle>
 
                         <DropdownMenu>
-                            <NavLink to="/category/te_en_hebras" className="nav-link">
+                            <NavLink to="/category/Té en Hebras" className="nav-link">
                                 <DropdownItem>Té en Hebras</DropdownItem>
                             </NavLink>
                             
                                 <DropdownItem divider/>
 
-                            <NavLink to="/category/tazas" className="nav-link">
+                            <NavLink to="/category/Tazas" className="nav-link">
                                 <DropdownItem>Tazas</DropdownItem>
                             </NavLink>
 
                                 <DropdownItem divider/>
 
-                            <NavLink to="/category/accesorios" className="nav-link">
+                            <NavLink to="/category/Accesorios" className="nav-link">
                                 <DropdownItem>Accesorios</DropdownItem>
                             </NavLink>
                            
