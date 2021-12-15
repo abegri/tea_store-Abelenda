@@ -71,7 +71,7 @@ const ItemDetailContainer =({greetings})=>{
     let promise= new Promise((resolve, reject) =>  {
         setTimeout(() => {
             resolve(array);
-        }, 2000 ); 
+        },  1000 ); 
     } );
 
     const getItem = async() =>{

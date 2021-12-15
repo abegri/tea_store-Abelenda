@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import '../NavBar/NavBar.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle} from 'reactstrap';
+import { NavLink } from 'react-router-dom';
+
+import "./DropdownCategoryList.css"
 
 
 const DropdownCategoryList =()=>{
@@ -17,11 +20,24 @@ const DropdownCategoryList =()=>{
                         <DropdownToggle caret>Categorías</DropdownToggle>
 
                         <DropdownMenu>
-                            <DropdownItem>Té en Hebras</DropdownItem>
+                            <NavLink to="/category/te_en_hebras" className="nav-link">
+                                <DropdownItem>Té en Hebras</DropdownItem>
+                            </NavLink>
+                            
                                 <DropdownItem divider/>
-                            <DropdownItem>Tazas</DropdownItem>
+
+                            <NavLink to="/category/tazas" className="nav-link">
+                                <DropdownItem>Tazas</DropdownItem>
+                            </NavLink>
+
                                 <DropdownItem divider/>
-                            <DropdownItem>Accesorios</DropdownItem>
+
+                            <NavLink to="/category/accesorios" className="nav-link">
+                                <DropdownItem>Accesorios</DropdownItem>
+                            </NavLink>
+                           
+
+
                         </DropdownMenu>
 
                     </Dropdown>

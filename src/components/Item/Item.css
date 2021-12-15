@@ -36,6 +36,10 @@
     align-items: center;
 }
 
+.button-a{
+    width: 90%;
+}
+
 .seeMore-button{
     background-color: var(--primaryColor);
     width: 100%;

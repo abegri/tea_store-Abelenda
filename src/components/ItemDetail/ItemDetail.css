@@ -1,11 +1,13 @@
 .section-details{
     width: 100%;
+    margin-top: 50px;
 }
 
 .details-container{
     width: 100%;
     display: flex;
     margin: 20px 0px;
+
 }
 
 .details-img-container{
@@ -13,6 +15,7 @@
     height: 500px;
     margin-right: 50px;
     border-radius: 10px ;
+  
 }
 
 .details-image{
