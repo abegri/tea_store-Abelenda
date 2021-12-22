@@ -20,20 +20,18 @@ const ItemCount = ({stock, initial}) => {
 
     return(
         <section>
-        <div className="counter-container">
-               
+            <div className="counter-container">
                 
-                <div className="buttons-containter">
-               
-                    <button onClick={onSustract} className="sustract-button"><FontAwesomeIcon icon={faMinus} className="faPlus" /></button>
-                        <h1>{count}</h1>
-                    <button onClick={onAdd} className="add-button"><FontAwesomeIcon icon={faPlus} className="faPlus" /></button>
+                    
+                    <div className="buttons-containter">
+                
+                        <button onClick={onSustract} className="sustract-button"><FontAwesomeIcon icon={faMinus} className="faPlus" /></button>
+                            <h1>{count}</h1>
+                        <button onClick={onAdd} className="add-button"><FontAwesomeIcon icon={faPlus} className="faPlus" /></button>
 
-                </div>
-
-                <button className="addToCart">Agregar al carrito</button>
-            
-        </div>
+                    </div>
+    
+            </div>
         </section>
     )
 }

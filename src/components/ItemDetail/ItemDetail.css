@@ -41,3 +41,39 @@
     border: none;
     padding: 5px;
 }
+
+.finish-purchase{
+    background-color: var(--contrastColor2);
+    color: var(--contrastColor1);
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    margin: 0px 0px 20px 15px;
+    
+
+}
+
+.continue-purchase{
+    background-color: var(--primaryColor);
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.contenedorcito{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.buttons-container{
+    display: flex;
+}
+
+.continue-link, .finish-link{
+    text-decoration: none !important;
+    width: 100%;
+}

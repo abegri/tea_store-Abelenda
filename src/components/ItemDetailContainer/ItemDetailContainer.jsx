@@ -21,7 +21,7 @@ const ItemDetailContainer =({greetings})=>{
         {
             id: 2,
             name: "Té de Jazmín",
-            stock: 5,
+            stock: 10,
             price: 600,
             imgUrl:"http://innatia.info/images/galeria/te-de-jazmin-0.jpg",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
@@ -30,7 +30,7 @@ const ItemDetailContainer =({greetings})=>{
         {
             id: 3,
             name: "Infusor de té- Tetera",
-            stock: 8,
+            stock: 20,
             price: 800,
             imgUrl:"https://d2ye0ltusw47tz.cloudfront.net/549998-large_default/infusor-de-te-forma-tetera-acero-inoxidable-colador-hebras.jpg",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
@@ -39,7 +39,7 @@ const ItemDetailContainer =({greetings})=>{
         {
             id: 4,
             name: "Infusor de té- Corazón",
-            stock: 8,
+            stock: 15,
             price: 800,
             imgUrl:"https://i.ebayimg.com/images/g/MbIAAOSwdg5dLgBR/s-l400.jpg",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
@@ -48,7 +48,7 @@ const ItemDetailContainer =({greetings})=>{
         {
             id: 5,
             name: "Taza Amapola",
-            stock: 8,
+            stock: 3,
             price: 800,
             imgUrl:"https://images.pexels.com/photos/7138780/pexels-photo-7138780.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
@@ -57,7 +57,7 @@ const ItemDetailContainer =({greetings})=>{
         {
             id: 6,
             name: "Taza Margaritas",
-            stock: 8,
+            stock: 6,
             price: 800,
             imgUrl:"https://images.unsplash.com/photo-1560228083-e0fd2410ce25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
