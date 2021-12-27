@@ -1,17 +1,21 @@
 import React from 'react';
-import ItemCount from "../ItemCount/ItemCount"
+import ItemCount from "../ItemCount/ItemCount";
 import { Link } from 'react-router-dom';
 import "./ItemDetail.css"
 
 
 const ItemDetail = ({itemDetails}) => {
+
+
     return (
         <section className="section-details">
+
             {itemDetails && itemDetails.map((itemDetail) => (
-                <div className="contenedorcito">
+
+                <div className="contenedorcito" key={itemDetail.id} item={itemDetail}>
                     <h6>Home / Productos / {itemDetail.category} / {itemDetail.name}</h6>
                     {/*Ese Home podría ser un link a Home */}
-                    <div className="details-container" key={itemDetail.id} item={itemDetail}>
+                    <div className="details-container" >
                         
                             <div className="details-img-container">
                                     <img src={itemDetail.imgUrl} className="details-image" alt={itemDetail.name}/>
@@ -22,8 +26,8 @@ const ItemDetail = ({itemDetails}) => {
                                 <h5>Descripción:</h5>
                                 <p>{itemDetail.description}</p>
                                 <h4>${itemDetail.price}</h4>
-                                <ItemCount stock={itemDetail.stock} initial={0}/>
-                                <button className="addToCart-button">Agregar al carrito</button>
+                                <ItemCount stock={itemDetail.stock} initial={0} item={itemDetail}/>
+                               {/*<button onClick={() => addToCart(itemDetail)}  className="addToCart-button">Agregar al carrito</button> */} 
                                 
                             </div>
                             
@@ -42,6 +46,7 @@ const ItemDetail = ({itemDetails}) => {
                     </div>
 
                 </div>
+                
             ))}
         </section>
     )

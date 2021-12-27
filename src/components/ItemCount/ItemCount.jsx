@@ -1,12 +1,15 @@
 import React, {useState} from 'react';
+import { CartConsumer } from '../../context/CartProvider';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 
 import './ItemCount.css';
 
 
-const ItemCount = ({stock, initial}) => {
- 
+const ItemCount = ({stock, initial, item}) => {
+
+    const {addToCart} = CartConsumer();
+
     const [count, setCount] = useState(initial);
    
 
@@ -29,6 +32,10 @@ const ItemCount = ({stock, initial}) => {
                             <h1>{count}</h1>
                         <button onClick={onAdd} className="add-button"><FontAwesomeIcon icon={faPlus} className="faPlus" /></button>
 
+                    </div>
+
+                    <div>
+                        <button onClick={() => addToCart(item)}  className="addToCart-button">Agregar al carrito</button>
                     </div>
     
             </div>

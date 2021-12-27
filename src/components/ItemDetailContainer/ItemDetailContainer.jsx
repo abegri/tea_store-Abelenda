@@ -1,5 +1,7 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
+import Lottie from "react-lottie";
+import teaAnimation from "../../lotties/tea-time-lottie.json";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 import "./ItemDetailContainer.css";
@@ -66,32 +68,50 @@ const ItemDetailContainer =({greetings})=>{
 
     ];
 
+    
+    useEffect(() =>  {
+        getData().then((res) => setData(res));
+        window.scrollTo(0, 0);
+    }, []);
+    
+
     const[data, setData] = useState(null);
 
-    let promise= new Promise((resolve, reject) =>  {
-        setTimeout(() => {
-            resolve(array);
-        },  1000 ); 
-    } );
+    function getData(){
+        let promise= new Promise((resolve, reject) =>  {
+            setTimeout(() => {
+                resolve(array);
+            }, 2000); 
+        } );
+            return promise;
 
-    const getItem = async() =>{
-        try{
-            const data = await promise;
-            setData(data);
-        } catch(error){
-            throw error;
-        } finally{
-            console.log(data);
-            console.log("la petición se terminó")} 
+    }
+
+    const loadingAnimation = {
+        loop: true,
+        autoplay: true,
+        animationData: teaAnimation
     };
     
-    useEffect(() =>  {getItem()}, [] )
+    
     
     return(
 
         <div className="allItems-container">
+
+            {
+                !data ? 
+                    <div className="animation-container">
+                            <Lottie options={loadingAnimation} height={250} width={250} /> 
+                    </div>
+                
+                :
+
+                    <ItemDetail itemDetails={data}/>
+            }
+                
           
-                <ItemDetail itemDetails={data}/>
+               
                 
         </div>
       

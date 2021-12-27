@@ -9,3 +9,13 @@
     margin-top: 20px;
     color: var(--primaryColor)
 }
+
+.animation-container{
+    margin-top: unset;
+    margin-bottom: 20px;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

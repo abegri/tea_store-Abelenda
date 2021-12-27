@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import './CartWidget.css'
 
 const CartWidget =()=>{
-
+    //¿a qué context va a acceder? A CartContext
     //const cartContext = useContext(CartContext);
 
     const {cart} = CartConsumer();
@@ -19,7 +19,7 @@ const CartWidget =()=>{
         <Link to="/cart">
             <div className="cart-container">
                 <FontAwesomeIcon icon={faShoppingCart} className="cart-icon" />
-                <p>0</p>
+                <p>{cart.length}</p>
             </div>
         </Link>
     )

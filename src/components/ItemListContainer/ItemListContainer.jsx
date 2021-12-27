@@ -1,5 +1,7 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
+import Lottie from "react-lottie";
+import teaAnimation from "../../lotties/tea-time-lottie.json";
 import ItemList from "../ItemList/ItemList";
 import './ItemListContainer.css'
 
@@ -66,7 +68,7 @@ const ItemListContainer =({greetings})=>{
 
     const[data, setData] = useState(null);
 
-    let promise= new Promise((resolve, reject) =>  {
+    /*let promise= new Promise((resolve, reject) =>  {
         setTimeout(() => {
             resolve(array);
         }, 0 ); 
@@ -81,15 +83,47 @@ const ItemListContainer =({greetings})=>{
         } finally{
             console.log(data);
             console.log("la petición se terminó")} 
-    };
+    };*/
+
+    function getData(){
+        let promise= new Promise((resolve, reject) =>  {
+            setTimeout(() => {
+                resolve(array);
+            }, 2000); 
+        } );
+            
+        return promise;
+
+    }
     
-    useEffect(() =>  {resolverArray()}, [] )
+    useEffect(() =>  {
+        getData().then((res) => setData(res));
+        window.scrollTo(0, 0);
+    }, []);
+
+    const loadingAnimation = {
+        loop: true,
+        autoplay: true,
+        animationData: teaAnimation
+    };
     
     return(
 
         <div className="listContainer">
-                <h1>{greetings}</h1>
-                <ItemList items={data}/>
+            {
+                !data ? 
+                    <div className="animation-container">
+                            <Lottie options={loadingAnimation} height={250} width={250} /> 
+                    </div>
+                
+                :
+
+                    <>
+                        <h1>{greetings}</h1>
+                        <ItemList items={data}/> 
+                    </>
+            }
+                
         </div>
       
     )

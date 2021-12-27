@@ -14,7 +14,7 @@ const NavBar =()=>{
                     <img src={logo} alt="logo" className="brand-logo"/>
                 </NavLink>
             </div>
-            <div className="drowDownMenu-container">
+            <div className="drowpDownMenu-container">
                 <nav className="navBar">
                     
                     <DropdownCategoryList />

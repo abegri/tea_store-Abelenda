@@ -23,8 +23,9 @@
     color: var(--primaryColor)
 }
 
-.drowDownMenu-container{
+.drowpDownMenu-container{
     display: flex;
+    align-items: center;
 }
 
 /*Estilos del dropdown menu*/
