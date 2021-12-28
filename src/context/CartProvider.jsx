@@ -22,20 +22,14 @@ export const CartProvider = ({children}) => {
         setCart([...cart, newItem]);
     }
 
-    function addItem(){
-        console.log("agregar cierta cantidad de un item al carrito")
-    }
-
-    function removeItem(){
-        console.log("Remover un item del carrito por su Id")
+    function removeItem(productToRemove){
+        setCart(
+            cart.filter((product) => product !== productToRemove)
+        );
     }
 
     function clear(){
-        console.log("remover todos los items")
-    }
-
-    function isInCart(){
-        console.log("id => true|false. Si está, tiene que retornar true. Si no, retorna false")
+        setCart([]);
     }
 
   
