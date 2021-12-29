@@ -28,9 +28,9 @@ const ItemCount = ({stock, initial, item}) => {
                     
                     <div className="buttons-containter">
                 
-                        <button onClick={onSustract} className="sustract-button"><FontAwesomeIcon icon={faMinus} className="faPlus" /></button>
+                        <button onClick={onSustract} className="sustract-button">-</button>
                             <h1>{count}</h1>
-                        <button onClick={onAdd} className="add-button"><FontAwesomeIcon icon={faPlus} className="faPlus" /></button>
+                        <button onClick={onAdd} className="add-button">+</button>
 
                     </div>
 
