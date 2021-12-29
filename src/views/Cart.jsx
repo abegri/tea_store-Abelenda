@@ -4,7 +4,7 @@ import { CartConsumer } from '../context/CartProvider';
 
 export default function Cart() {
 
-    const {cart} = CartConsumer();
+    const {cart, clear, removeItem} = CartConsumer();
 
     
     return (
@@ -23,7 +23,20 @@ export default function Cart() {
                 
                 : 
                 
-                <div>{cart.length}</div>
+                <div>{cart.map((item) => (
+                    <>
+                    <div key={item.id}>
+                        <div>{item.name}</div>
+                        <div>{item.quantity} x ${item.price.toFixed(2)}</div>
+                    </div>
+
+                    <button onClick={() => removeItem(item)}>Eliminar item</button>
+                    </>
+                ))}
+                    <button onClick={() => clear()}>Vaciar Carrito</button>
+
+                
+                </div>
                 
                 }
             </div>
