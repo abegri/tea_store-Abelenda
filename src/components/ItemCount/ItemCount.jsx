@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
 import { CartConsumer } from '../../context/CartProvider';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 
 import './ItemCount.css';
 
@@ -29,7 +27,7 @@ const ItemCount = ({stock, initial, item}) => {
                     <div className="buttons-containter">
                 
                         <button onClick={onSustract} className="sustract-button">-</button>
-                            <h1>{count}</h1>
+                            <p>{count}</p>
                         <button onClick={onAdd} className="add-button">+</button>
 
                     </div>

@@ -3,6 +3,10 @@ import {useState, useEffect} from 'react';
 import Lottie from "react-lottie";
 import teaAnimation from "../../lotties/tea-time-lottie.json";
 import ItemList from "../ItemList/ItemList";
+//import {collection, getDocs} from "firebase/firestore"
+//import db from "../../service/index.js"
+
+
 import './ItemListContainer.css'
 
 const ItemListContainer =({greetings})=>{
@@ -52,7 +56,7 @@ const ItemListContainer =({greetings})=>{
             price: 800,
             imgUrl:"https://images.pexels.com/photos/7138780/pexels-photo-7138780.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-            category:"Taza"
+            category:"Tazas"
         },
         {
             id: 6,
@@ -61,29 +65,22 @@ const ItemListContainer =({greetings})=>{
             price: 800,
             imgUrl:"https://images.unsplash.com/photo-1560228083-e0fd2410ce25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-            category:"Taza"
+            category:"Tazas"
         },
 
     ];
 
+    //hay que sacar ese null y poner []
+
     const[data, setData] = useState(null);
 
-    /*let promise= new Promise((resolve, reject) =>  {
-        setTimeout(() => {
-            resolve(array);
-        }, 0 ); 
-    } );
+    /*
+    
+    para usar Firebase:
 
-    const resolverArray = async() =>{
-        try{
-            const data = await promise;
-            setData(data);
-        } catch(error){
-            throw error;
-        } finally{
-            console.log(data);
-            console.log("la petición se terminó")} 
-    };*/
+
+    
+    */
 
     function getData(){
         let promise= new Promise((resolve, reject) =>  {
@@ -99,6 +96,24 @@ const ItemListContainer =({greetings})=>{
     useEffect(() =>  {
         getData().then((res) => setData(res));
         window.scrollTo(0, 0);
+
+        /*
+            const itemListCollection = collection(db, "items")
+
+            getDocs(itemRef).then((snapshot) => {
+                //ahora es un map porque es un array
+                snapshot.docs.map((doc) => console.log(id: doc.id, ...doc.data()))
+                    console.log({id: snapshot.id, ...snapshot.data()})
+
+                    let document = {
+                        id: snapshot.id,
+                        ...snapshot.data()
+                    }
+
+                    setData([...data, document])
+                }
+            })
+        */
     }, []);
 
     const loadingAnimation = {
