@@ -3,118 +3,69 @@ import {useState, useEffect} from 'react';
 import Lottie from "react-lottie";
 import teaAnimation from "../../lotties/tea-time-lottie.json";
 import ItemList from "../ItemList/ItemList";
-//import {collection, getDocs} from "firebase/firestore"
-//import db from "../../service/index.js"
+import {doc, getDoc, collection, getDocs, query, where} from "firebase/firestore";
+import db from "../../service/index";
+
 
 
 import './ItemListContainer.css'
 
 const ItemListContainer =({greetings})=>{
     
-    const array=[ 
-        {
-            id: 1,
-            name: "Té Chai",
-            stock: 8,
-            price: 500,
-            imgUrl:"https://http2.mlstatic.com/D_NQ_NP_609674-MLA25813316605_072017-O.jpg",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-            category:"Té en hebras"
-            
-        },  
-        {
-            id: 2,
-            name: "Té de Jazmín",
-            stock: 5,
-            price: 600,
-            imgUrl:"http://innatia.info/images/galeria/te-de-jazmin-0.jpg",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-            category:"Té en hebras"
-        }, 
-        {
-            id: 3,
-            name: "Infusor de té- Tetera",
-            stock: 8,
-            price: 800,
-            imgUrl:"https://d2ye0ltusw47tz.cloudfront.net/549998-large_default/infusor-de-te-forma-tetera-acero-inoxidable-colador-hebras.jpg",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-            category:"Accesorios"
-        },
-        {
-            id: 4,
-            name: "Infusor de té- Corazón",
-            stock: 8,
-            price: 800,
-            imgUrl:"https://i.ebayimg.com/images/g/MbIAAOSwdg5dLgBR/s-l400.jpg",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-            category:"Accesorios"
-        },
-        {
-            id: 5,
-            name: "Taza Amapola",
-            stock: 8,
-            price: 800,
-            imgUrl:"https://images.pexels.com/photos/7138780/pexels-photo-7138780.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-            category:"Tazas"
-        },
-        {
-            id: 6,
-            name: "Taza Margaritas",
-            stock: 8,
-            price: 800,
-            imgUrl:"https://images.unsplash.com/photo-1560228083-e0fd2410ce25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-            category:"Tazas"
-        },
-
-    ];
 
     //hay que sacar ese null y poner []
 
-    const[data, setData] = useState(null);
-
-    /*
-    
-    para usar Firebase:
-
-
-    
-    */
-
-    function getData(){
-        let promise= new Promise((resolve, reject) =>  {
-            setTimeout(() => {
-                resolve(array);
-            }, 2000); 
-        } );
-            
-        return promise;
-
-    }
+    const[data, setData] = useState([]);
     
     useEffect(() =>  {
-        getData().then((res) => setData(res));
-        window.scrollTo(0, 0);
+       // getData().then((res) => setData(res));
+       // window.scrollTo(0, 0);
 
+        
+            
         /*
-            const itemListCollection = collection(db, "items")
+            Para traer de a un producto:
 
-            getDocs(itemRef).then((snapshot) => {
-                //ahora es un map porque es un array
-                snapshot.docs.map((doc) => console.log(id: doc.id, ...doc.data()))
-                    console.log({id: snapshot.id, ...snapshot.data()})
-
+            const itemRef = doc(db, "Items", "B9FV1tqQPqCXN8cVULyu");
+            getDoc(itemRef).then((snapshot) => {
+                if(snapshot.exists()){
                     let document = {
                         id: snapshot.id,
                         ...snapshot.data()
                     }
-
                     setData([...data, document])
                 }
             })
+            
         */
+            //Traemos TODOS los productos de la colección
+            const itemListCollection = collection(db, "Items");
+
+            getDocs(itemListCollection).then((snapshot) => {
+                //ahora es un map porque es un array
+               setData(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
+                }
+            )
+
+
+
+            
+        
     }, []);
+
+
+    /*
+    para hacer un filtro:
+    Hacemos la query
+    useEffect(() =>  {
+            const q = query(collection(db, "Items"), where("category", "==", "Tazas"));
+            getDocs(q).then((snapshot) => {
+                snapshot.docs.map((doc) => console.log({id: doc.id, ...doc.data()}))
+    })
+
+
+    
+    */
 
     const loadingAnimation = {
         loop: true,
